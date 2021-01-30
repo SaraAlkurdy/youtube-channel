@@ -1,0 +1,16 @@
+<div class="search-algin mb-5 py-3" fxLayout="row wrap" fxFlex="100">
+  <div class="container">
+    <div class="logo" fxLayout="column" fxFlex="20">
+      <img routerLink="home" src="../../../assets/images/youtube-logo.png">
+    </div>
+    <form fxLayout="column" fxFlex="80">
+      <div class="input-group" style="align-items: center;" fxShow="false" fxShow.gt-sm>
+        <input type="text" (input)="search" class="form-control" #videoName placeholder="Search for a video..." fxFlex>
+        <span style="position: absolute; right: 0px; height: 100%; display: flex; align-items: center; z-index: 9; background: #313131; width: 70px;
+        justify-content: center; color: #fff;">
+            <img src="../../../assets/images/search.png" style="width: 20px;">
+        </span>
+    </div>
+    </form>
+  </div>
+</div>

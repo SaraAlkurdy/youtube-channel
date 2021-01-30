@@ -1,0 +1,64 @@
+
+.details {
+    .row{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    h5 {
+        color: #fff;
+    }
+    p {
+        color: #909090;
+    }
+    ul {
+        display: flex;
+        &:first-child {
+            li {
+                color: #33AAFF;
+            }
+        }
+        &:nth-of-type(2) {
+            li {
+                color: #909090;
+                margin:0.4em;
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:nth-child(even){
+                    font-weight: 900;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+
+
+    hr {
+        background: #909090;
+    }
+
+    .video-data {
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between;
+
+        ul {
+            li {
+                color: #909090;
+            }
+            &:first-child {
+                li {
+                    margin:0.4em;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    &:nth-child(even){
+                        font-weight: 900;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+    }
+}

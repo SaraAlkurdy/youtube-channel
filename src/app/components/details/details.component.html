@@ -1,0 +1,51 @@
+<div class="container">
+  <div fxLayout="row wrap" fxFlex="100">
+    <div class="video w-100">
+      <a href="https://www.youtube.com/watch?v={{videoId}}" target="_blank">
+        <iframe [src]="videoUrl" width="100%" height="400">
+          <!-- <img [src]="video.snippet.thumbnails.medium.url" alt="..."> -->
+        </iframe>
+      </a>
+    </div>
+
+    <div class="details mt-3">
+          <ul class="list-unstyled">
+            <li *ngFor="let tag of video?.snippet?.tags">#{{tag}}</li>
+          </ul>
+          <star-rating [value]="rating" totalstars="5" checkedcolor="#FF0000" uncheckedcolor="#313131" size="24px"
+            readonly="false" (rate)="onRate($event, video)"></star-rating>
+          <h5> {{video?.snippet?.localized?.title}}</h5>
+
+          <div class="video-data">
+            <ul class="list-unstyled">
+              <li>{{video?.statistics?.viewCount}} views</li>
+              <li>.</li>
+              <li>{{video?.snippet?.publishedAt | date:'dd-MM-yyyy'}}</li>
+              <li>.</li>
+              <li>{{duration}}</li>
+            </ul>
+  
+            <ul class="list-unstyled">
+              <li>
+                <img src="../../../assets/images/like.png">
+              </li>
+              <li>
+                {{video?.statistics?.likeCount}}
+              </li>
+              <li>
+                <img src="../../../assets/images/dislike.png">
+              </li>
+              <li>
+                {{video?.statistics?.dislikeCount}}
+              </li>
+             
+            </ul>
+          </div>
+
+      <hr>
+
+      <p>{{video?.snippet?.localized?.description}}</p>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+
+<div class="container" fxLayout="column wrap">
+  
+  
+  <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-between">
+    <div class="video-list" fxLayout="column" fxFlex="30"
+      *ngFor="let video of youtubeService.videos | paginate: { itemsPerPage: 9, currentPage: p }">
+     
+      <div class="youtube-channel" *ngIf="!youtubeService.loading">
+        <div class="mb-5 w-100">
+          <div class="border-0 vh-50">
+            <a routerLink="/home/{{video.id.videoId}}">
+              <img [src]="video.snippet.thumbnails.medium.url" alt="...">
+            </a>
+            <div class="text-center">
+              <p class="mb-0 mt-1">
+                <a routerLink="/home/{{video.id.videoId}}">
+                  {{video.snippet.title}}
+                </a>
+              </p>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-list" fxLayout="row wrap" fxFlex="100" *ngFor="let video of youtubeService.videos | paginate: { itemsPerPage: 9, currentPage: p }">
+    <div class="youtube-channel" *ngIf="youtubeService.loading">
+      <div class="mb-4 w-100">
+        <div class="media" >
+          <a routerLink="/home/{{video.id.videoId}}">
+            <img class="mr-3"  [src]="video.snippet.thumbnails.medium.url" alt="Generic placeholder image">
+          </a>
+          <div class="media-body">
+            <a routerLink="/home/{{video.id.videoId}}" class="mt-0">{{ video.snippet.title }}</a>
+            <star-rating value="2" totalstars="5" checkedcolor="#FF0000" uncheckedcolor="#313131" size="24px" readonly="false" (rate)="onRate($event, video)"></star-rating>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <pagination-controls fxLayout="row" fxLayoutAlign="center" (pageChange)="p = $event"></pagination-controls>
+</div>

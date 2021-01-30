@@ -1,0 +1,23 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+    background-color: #1E201F;
+}
+
+.ngx-pagination .disabled, .pagination-previous, .pagination-next {
+    display: none !important;
+}
+
+.ngx-pagination .current {
+    background: #e6e6e6 !important;
+    color: #313131 !important;
+}
+
+.ngx-pagination a:hover, .ngx-pagination button:hover {
+    background: #FF0000 !important;
+}
+
+.ngx-pagination a, .ngx-pagination button {
+    background: #313131 !important;
+    color: #e6e6e6 !important;
+}
